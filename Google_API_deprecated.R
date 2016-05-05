@@ -13,7 +13,7 @@ GetGoogleResults <- function(keyword, service, key) {
   return(results)
 }
 
-b <- read.csv("TH.Final.txt", sep="\t")
+b <- read.csv("TH.Final.txt", sep="\t") #encoding="UTF-8"
 formas  <- b$form
 
 freq = NULL
