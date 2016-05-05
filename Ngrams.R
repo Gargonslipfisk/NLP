@@ -1,15 +1,6 @@
 library(tm)
 library(RWeka)
-setwd("~/Apple/R/NGram")
-  VI = readLines("VIETNAMNET.txt", encoding = "UTF-8")
-  VI <- VI[VI != ""]
-  VI <- VI[VI != " "]
-  for (i in 1:1146785){
-    cat(i, '\n')
-    nam <- paste("tdm", i, sep = "")
-    assign(nam, value = tdm.generate(VI[i], 2, 9))
-  }
-
+setwd("~/Erreria/NGrams")
 
 ###FUNCIÓN TDM
 
@@ -73,7 +64,7 @@ tdm.matrix <- as.matrix(tdmc_rs)
 topwords <- rowSums(tdm.matrix)
 z <- sort(topwords, decreasing = T)
 zz <- as.data.frame(z)
-write.csv(zz,"tdmc5.csv") ###ENCODING
+write.csv(zz,"tdmc5.csv")
 
 ###COMBINANDO
 
